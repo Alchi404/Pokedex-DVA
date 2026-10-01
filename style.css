@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+header {
+    padding: 20px max(calc(50% - 720px), clamp(1.5rem, 0.786rem + 3.571vi, 4rem));
+    height: 80px;
+    background-color: #09212A;
+}
+
+main{
+    background-color: #06171E;
+    height: 90vh;
+}
+
+.poke-Preview {
+    background-color: aquamarine;
+    height: 250px;
+    width: 350px;
+}
+
+
+
+
+
+
+
+
+footer{
+    padding: 20px max(calc(50% - 720px), clamp(1.5rem, 0.786rem + 3.571vi, 4rem));
+    height: 120px;
+    background-color: #09212A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
