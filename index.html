@@ -6,26 +6,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
+    <script defer src="./script.js"></script>
+    <script defer src="./template.js"></script>
 
 </head>
 
-<body>
+<body onload="init()">
     <header>
         <h1>Pokedex</h1>
+
+        <input type="text">
     </header>
     <main>
+        <section id="content" class="content-wrapper">
+            <article class="poke-Preview" onclick="openDialog()">
+                <h2>Pokemon</h2>
+                <div class="poke-type-preview">
+                    <ul>
+                        <li>test</li>
+                        <li>test2</li>
+                    </ul>
+                </div>
+                <img src="./assets/img/jigglybuff.jpg" alt="">
+            </article>
 
-<section id="content">
-    <article class="poke-Preview">
+            <article class="poke-Preview">
+                <h2>Pokemon</h2>
+            </article>
+            <article class="poke-Preview">
+                <h2>Pokemon</h2>
+            </article>
+            <article class="poke-Preview">
+                <h2>Pokemon</h2>
+            </article>
+            <article class="poke-Preview">
+                <h2>Pokemon</h2>
+            </article>
+            <article class="poke-Preview">
+                <h2>Pokemon</h2>
+            </article>
 
-    </article>
+        </section>
+        <dialog id="detail-Dialog">
+            <section>
+                <button onclick="closeDialog()">X</button>
+                <div class="dialog-name-type-wrapper">
+                    <h3>Pokename #69</h3>
+                    <ul>
+                        <li>test</li>
+                        <li>test2</li>
+                    </ul>
+                    <img src="./assets/img/El_Macho.webp" alt="">
+                </div>
+                <article class="dialog-info">
+                    <div class="dialog-nav">
+                    <p>test</p>
+                    <p>test</p>
+                    <p>test</p>
+                    </div>
 
-</section>
+                    <div class="dialog-info-about">
+                        <table>
+                            <tr>
+                                <th>test1</th>
+                                <td>test1</td>
+                            </tr>
+                            <tr>
+                                <th>test2</th>
+                                <td>test2</td>
+                            </tr>
+                            <tr>
+                                <th>test3</th>
+                                <td>test3</td>
+                            </tr>
+                            <tr>
+                                <th>test4</th>
+                                <td>test4</td>
+                            </tr>
+                            <tr>
+                                <th>test5</th>
+                                <td>test5</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    
+                </article>
+            </section>
+        </dialog>
+
 
     </main>
     <footer class="indexfooter">
-        <img src="./assets/icon/dev_logo.svg" alt="Developer Akademie Logo">
+        <img alt="Developer Akademie Logo">
         <p>©2023 Developer Akademie GmbH</p>
     </footer>
 </body>
