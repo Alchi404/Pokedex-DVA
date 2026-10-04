@@ -15,7 +15,8 @@
     <header>
         <h1>Pokedex</h1>
 
-        <input type="text">
+        <input type="text" placeholder="Search Pokemon...">
+        <button>Search</button>
     </header>
     <main>
         <section id="content" class="content-wrapper">
@@ -29,29 +30,12 @@
                 </div>
                 <img src="./assets/img/jigglybuff.jpg" alt="">
             </article>
-
-            <article class="poke-Preview">
-                <h2>Pokemon</h2>
-            </article>
-            <article class="poke-Preview">
-                <h2>Pokemon</h2>
-            </article>
-            <article class="poke-Preview">
-                <h2>Pokemon</h2>
-            </article>
-            <article class="poke-Preview">
-                <h2>Pokemon</h2>
-            </article>
-            <article class="poke-Preview">
-                <h2>Pokemon</h2>
-            </article>
-
         </section>
         <dialog id="detail-Dialog">
             <section>
                 <button onclick="closeDialog()">X</button>
                 <div class="dialog-name-type-wrapper">
-                    <h3>Pokename #69</h3>
+                    <h3 id="TestHeadline">Pokename #69</h3>
                     <ul>
                         <li>test</li>
                         <li>test2</li>
@@ -60,9 +44,9 @@
                 </div>
                 <article class="dialog-info">
                     <div class="dialog-nav">
-                    <p>test</p>
-                    <p>test</p>
-                    <p>test</p>
+                        <p>test</p>
+                        <p>test</p>
+                        <p>test</p>
                     </div>
 
                     <div class="dialog-info-about">
@@ -90,8 +74,10 @@
                         </table>
                     </div>
 
-                    
+                    <img src="./assets/Icon/arrow_left.png" alt="" class="prev-button">
+                    <img src="./assets/Icon/arrow_right.png" alt="" class="next-button">
                 </article>
+
             </section>
         </dialog>
 

@@ -25,7 +25,7 @@ header {
 main {
     padding: 20px max(calc(50% - 720px), clamp(1.5rem, 0.786rem + 3.571vi, 4rem));
     background-color: #06171E;
-    height: 100dvh;
+    /* height: 100dvh; */
 }
 
 .content-wrapper {
@@ -87,7 +87,7 @@ main {
         grid-row: 2;
         width: 95%;
         height: 80%;
-        object-fit: contain;
+        object-fit: cover;
         object-position: center;
     }
 }
@@ -115,6 +115,13 @@ dialog {
         position: absolute;
         right: 20px;
         top: 20px;
+        transition: 250ms;
+    }
+
+    button:hover{
+        cursor: pointer;
+        scale: 1.2;
+        transition: 250ms;
     }
 
     .dialog-name-type-wrapper {
@@ -172,11 +179,29 @@ dialog {
 
                 th,
                 td {
-                    padding: 10px 0 10px 0;
+                    padding: 8px 0 10px 0;
                     text-align: start;
                 }
             }
         }
+    }
+
+    .prev-button{
+        position: absolute;
+        left: 20px;
+        bottom: 20px;
+    }
+
+    .next-button{
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .next-button:hover, .prev-button:hover{
+        cursor: pointer;
+        scale: 1.1;
+        transition: 250ms;
     }
 }
 
