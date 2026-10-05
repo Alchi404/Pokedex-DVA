@@ -8,19 +8,8 @@ async function init() {
     renderPokemon()
 }
 
-async function renderPokemon () {
-    const data = await getData();
-    let contentRef = document.getElementById("content");
-    let content = "";
-    for (let i = 0; i < data.results.length; i++) {
-        content += templatePokemon(allDataNormal[i]);
-    }
-    
-    contentRef.innerHTML = content;
-}
-
 async function getData() {
-    let response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=30&offset=0");
+    let response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=41&offset=0");
     console.log("response1:", response);
     let data = await response.json();
     console.log("yes", data.results);
@@ -35,14 +24,56 @@ async function getData() {
     return data;
 }
 
-function openDialog(i) {
+async function renderPokemon() {
+    const data = await getData();
+    let contentRef = document.getElementById("content");
+    let content = "";
+    for (let i = 0; i < data.results.length; i++) {
+        contentRef.innerHTML += templatePokemon(allDataNormal[i]);
+        checkType(allDataNormal[i])
+    }
+    // contentRef.innerHTML = content; 
+    // 
+}
+
+function checkType(pokemonid) {
+    let pokeBackground = document.getElementById(`poke-Preview${pokemonid.id}`)
+    let pokeTypeBackground1 = document.getElementById(`poke-Preview-type1-${pokemonid.id}`)
+    let pokeTypeBackground2 = document.getElementById(`poke-Preview-type2-${pokemonid.id}`)
+    pokeBackground.classList.add(`${pokemonid.types[0].type.name}`)
+    pokeTypeBackground1.classList.add(`${pokemonid.types[0].type.name}`)
+    if (pokeTypeBackground2) {
+        pokeTypeBackground2.classList.add(`${pokemonid.types[1].type.name}`)
+    }
+}
+
+function checkTypeDialog(pokemonid) {
+    let pokeBackground = document.getElementById(`poke-dialog${pokemonid}`)
+    let pokeTypeBackground1 = document.getElementById(`poke-dialog-type1${pokemonid}`)
+    let pokeTypeBackground2 = document.getElementById(`poke-dialog-type2${pokemonid}`)
+
+    pokeBackground.classList.add(`${allDataNormal[pokemonid].types[0].type.name}`)
+    pokeTypeBackground1.classList.add(`${allDataNormal[pokemonid].types[0].type.name}`)
+    if (pokeTypeBackground2) {
+        pokeTypeBackground2.classList.add(`${allDataNormal[pokemonid].types[1].type.name}`)
+    }
+
+}
+
+function openDialog(pokemonid) {
+    let contentRef = document.getElementById("detail-Dialog");
+    let content = "";
+    content = templatePokemonDialog(pokemonid);
+    contentRef.innerHTML = content;
+        checkTypeDialog(pokemonid)
     dialogRef.showModal();
-    dialogHead.innerHTML = i.name;
 }
 
 function closeDialog() {
     dialogRef.close()
 }
+
+// Mehr Anzeigen mit < 30 display none ? 
 
 
 // async function promiseAll() {
